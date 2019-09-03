@@ -1,0 +1,120 @@
+<div layout="column" layout-fill>
+  <div align="center" layout="row" layout-align="center center">
+   
+     <mat-card fxFlex="100">
+
+      <mat-card-title>Projeto Academia</mat-card-title>
+      <mat-card-subtitle>
+        Cadastro-Alunos
+      </mat-card-subtitle>
+      <mat-card>Dados Pessoais:</mat-card>
+      <mat-card-content fxLayout="column" fxLayoutAlign="stretch"  >
+        
+      <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="formAluno" (ngSubmit)="onSubmit()" >
+     
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" name="nome" id="nome" required>
+  </div>
+  <br>
+
+  <div class="form-group">
+      <label for="identidade">Identidade</label>
+      <input type="text" class="form-control" name="identidade" id="identidade" required>
+    </div>
+    <br>
+
+    <div class="form-group">
+        <label for="cpf">Cpf</label>
+        <input type="text" class="form-control" name="cpf" id="cpf" required>
+      </div>
+      <br>
+
+  <div class="form-group">
+      <label for="endereco">Endereço</label>
+      <input type="text" class="form-control" name="endereco" id="endereco" required>
+    </div>
+  <br>
+
+  <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="text" class="form-control" name="telefone" id="telefone" required>
+    </div>
+  <br>
+
+  <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" name="email" id="email" required>
+    </div>
+  <br>
+
+  <div class="form-group">
+      <label for="peso">Peso</label>
+      <input type="text" class="form-control" name="peso" id="peso" required>
+      <label for="altura">Altura</label>
+      <input type="text" class="form-control" name="altura" id="altura" required>
+    </div>
+  <br>
+
+  
+
+  <div class="form-group">
+    <label for="tipo">Tipo</label>
+    <select class="form-control" name="tipo" id="tipo">
+      <option value="1">Pessoa física</option>
+      <option value="2">Pessoa jurídica</option>
+    </select>
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Gênero</label>
+  <br>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="genero" id="masculino" [value]="1">
+      <label class="form-check-label" for="masculino">Masculino</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="genero" id="feminino" [value]="2">
+      <label class="form-check-label" for="feminino">Feminino</label>
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="dataNascimento">Data de nascimento</label>
+    <input type="date" class="form-control" name="dataNascimento" id="dataNascimento">
+  </div>
+  <br>
+
+  <div class="form-group">
+      <label for="pagamento">Pagamento</label>
+      <select class="form-control" name="pagamento" id="pagamento">
+        <option value="1">Pago</option>
+        <option value="2">Não Pago</option>
+      </select>
+    </div>
+    <br>
+
+  <div class="form-group">
+    <label for="observacao">Observação</label>
+    <textarea class="form-control" rows="3" name="observacao" id="observacao"></textarea>
+  </div>
+  <br>
+
+  
+  
+  <button mat-button color="primary" type="submit">
+      Salvar</button>
+      <br>
+  <button mat-button color="warn"  type="reset">Cancelar</button>
+
+  
+
+        </form>
+
+       </mat-card-content>
+     <mat-card-footer>
+    </mat-card-footer>
+   </mat-card>
+ </div>
+</div>
