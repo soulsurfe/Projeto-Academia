@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Cadastrofuncionario } from './shared/cadastrofuncionario';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -11,29 +11,39 @@ import { Cadastrofuncionario } from './shared/cadastrofuncionario';
 })
 export class CadastrofuncionarioComponent implements OnInit {
 
-  formCadastrofuncionario: FormGroup;
-  constructor() { }
+  form: FormGroup = new FormGroup({
+    nome: new FormControl(null, [Validators.required]),
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    genero: new FormControl(null, [Validators.required]),
+    dataNascimento: new FormControl(null, [Validators.required]),
+    endereco: new FormControl(null, [Validators.required]),
+    identidade: new FormControl(null, [Validators.required]),
+    cpf: new FormControl(null, [Validators.required]),
+    dataContratacao: new FormControl(null, [Validators.required]),
+    telefone: new FormControl(null, [Validators.required])
+  });
+
+  dados: any[] = [];
+  constructor() {}
+
   ngOnInit() {
-    this.createForm(new Cadastrofuncionario());
   }
-  createForm(cadastrofuncionario: Cadastrofuncionario) {
-    this.formCadastrofuncionario = new FormGroup({
-      nome: new FormControl(cadastrofuncionario.nome),
-      genero: new FormControl(cadastrofuncionario.genero),
-      dataNascimento: new FormControl(cadastrofuncionario.dataNascimento),
-      endereco: new FormControl(cadastrofuncionario.endereco),
-      identidade: new FormControl(cadastrofuncionario.identidade),
-      cpf: new FormControl(cadastrofuncionario.cpf),
-      dataContratacao: new FormControl(cadastrofuncionario.dataContratacao),
-      telefone: new FormControl(cadastrofuncionario.telefone),
-      email: new FormControl(cadastrofuncionario.email),
+
+  cadastro() {
+    this.dados.push({
+      nome: this.form.get('nome').value,
+      email: this.form.get('email').value,
+      genero: this.form.get('genero').value,
+      dataNascimento: this.form.get('dataNascimento').value,
+      endereco: this.form.get('endereco').value,
+      identidade: this.form.get('identidade').value,
+      cpf: this.form.get('cpf').value,
+      dataContratacao: this.form.get('dataContratacao').value,
+      telefone: this.form.get('telefone').value
     });
   }
-  onSubmit() {
-    // aqui você pode implementar a logica para fazer seu formulário salvar
-    console.log(this.formCadastrofuncionario.value);
-    // Usar o método reset para limpar os controles na tela
-    this.formCadastrofuncionario.reset(new Cadastrofuncionario());
-  }
+
 }
+
+
 
