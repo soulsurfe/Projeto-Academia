@@ -9,6 +9,8 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CadastrofuncionarioComponent } from './cadastrofuncionario/cadastrofuncionario.component';
 import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
+import { CadastroGeraisComponent } from './cadastro-gerais/cadastro-gerais.component';
+import { RelatorioClienteComponent } from './relatorio-cliente/relatorio-cliente.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.componen
     FormularioComponent,
     CadastrofuncionarioComponent,
     PaginaInicialComponent,
+    CadastroGeraisComponent,
+    RelatorioClienteComponent,
   ],
   imports: [
     BrowserModule,
